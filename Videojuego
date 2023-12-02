@@ -1149,3 +1149,48 @@ class Game:
                                 self.print_slow("Pero... ¿Habra alguien capaz de detenerla?")
                                 self.print_slow("Nunca llegaras a saberlo, por que moriste por su mano...\n")
                                 print(fin)
+    def taberna(self,audio_file):
+        if self.current_location == "Taberna":
+            pygame.mixer.init()
+            pygame.mixer.music.load(audio_file)
+            pygame.mixer.music.play(-1)
+            self.print_slow("\nUbicacion: Taberna\n")
+            print(tavern)
+            self.print_slow("Chago(Bartender): Vaya, regresaron muy pronto.\n")
+            if self.key == "no key":
+                self.print_slow("Magoth: Si si, no pudimos explorar mas por que no conseguimos una llave. \n")
+                self.print_slow("Chago: Diablos, odio cuando pasa eso.\n")
+                self.print_slow("Magoth: Si... apesta\n")
+            elif self.key == "key":
+                self.print_slow("Magoth: Si si, decidimos dejar la exploracion por hoy.\n")
+                self.print_slow("Thorne: Si, pero no cruzamos una puerta que podria haber tenido un cofre con tesoros detras de ella.\n")
+                self.print_slow("Aria: Oooo, podia ser un cofre trampa.\n")
+                self.print_slow("Garrick: Dejemoslo en que todos salimos bien y con vida de ahi.\n")
+
+            self.print_slow("Chago: En fin, ¿Que van a pedir hoy?\n")
+            if self.currency == "high":
+                self.print_slow("Magoth: Pues creo que conseguimos muy buen botin hoy. Pidan lo que quieran, no se limiten.\n")
+                self.print_slow("Thorne: Yo pedire unas Brochetas de Dragón a la Barbacoa.")
+                self.print_slow("Descripcion: Jugosas brochetas de carne de dragón marinadas en una salsa secreta y asadas a la parrilla.")
+                self.print_slow("Se sirven con arroz basmati y ensalada.\n")
+                self.print_slow("Elysia: Yo voy a pedir un Pastel Élfico.")
+                self.print_slow("Descripcion: Un exquisito pastel elaborado con frutas mágicas de los bosques élficos, cubierto con una capa de")
+                self.print_slow("crema encantada que cambia de color con cada bocado.\n")
+                self.print_slow("Garrick: Yo quiero un Pescado de las Profundidades Abismales.")
+                self.print_slow("Descripción: Un pescado capturado en las aguas más oscuras y profundas, sazonado con hierbas")
+                self.print_slow("submarinas y servido con algas marinas crujientes.\n")
+                self.print_slow("Aria: Yo quiero un Pan de Hada Encantado por favor.")
+                self.print_slow("Descripción: Un pan esponjoso y mágico que cambia de sabor con cada mordida, dependiendo de")
+                self.print_slow("los deseos de quien lo coma.\n")
+                self.print_slow("Chago: ¿Y el nuevo que va a pedir? Nos queda la Sopa de Criaturas Místicas y Filete de Grifo a la Parrilla.")
+                while True:
+                    print("1. Sopa de Criaturas Misticas")
+                    print("   Descripción: Una sopa llena de criaturas místicas como fénix, unicornios y grifos, cocidas a fuego lento para extraer sus sabores únicos.")
+                    print("2. Filete de Grifo a la Parrilla")
+                    print("   Descripción: Un jugoso filete de grifo marinado con hierbas finas y asado a la parrilla.")
+                    print("   Acompañado de puré de raíces y una salsa de bayas silvestres.")
+                    comida = input(">> ").lower()
+                    if comida in ["1", "2", "sopa de criaturas misticas", "filete de grifo a la parrilla"]:
+                        break
+                    else:
+                        print("Se que esta ves son palabras mas exoticas. Pero vamos ¡Que buenas suenan! Elige un platillo de la lista, intentalo de nuevo.")
