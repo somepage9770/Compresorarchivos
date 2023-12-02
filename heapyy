@@ -1,1 +1,89 @@
+import math
 
+class HeapNode:
+    def __init__(self, key, value):
+        self.key = key
+        self.value = value
+
+class Heap:
+    def __init__(self):
+        self.heap = []
+        self.size = 0
+    
+    def parent(self, i):
+        return i // 2
+        
+    def left_child(self, i):
+        return i * 2
+    
+    def right_child(self, i):
+        return i * 2 + 1
+    
+    def swap(self, idx1, idx2):
+        self.heap[idx1], self.heap[idx2] = self.heap[idx2], self.heap[idx1]
+    
+    def heapify(self, idx):
+        left_idx = self.left_child(idx)
+        right_idx = self.right_child(idx)
+        
+        if left_idx <= self.size - 1 and self.heap[left_idx].key < self.heap[idx].key:
+            smallest_idx = left_idx
+        else:
+            smallest_idx = idx
+        
+        if right_idx <= self.size - 1 and self.heap[right_idx].key < self.heap[smallest_idx].key:
+            smallest_idx = right_idx
+        
+        if smallest_idx != idx:   
+            self.swap(smallest_idx, idx)
+            self.heapify(smallest_idx)
+
+    def build_heap(self, elements):
+        self.size = len(elements)
+
+        self.heap = elements
+        self.heap.insert(0, HeapNode(math.inf, None))
+
+        for i in range(self.size // 2 ,0, -1):
+            self.heapify(i)
+    
+    def peek(self):
+        if self.size == 0:
+            return None
+
+        return  self.heap[1].key
+
+    def pop(self):
+        if self.size == 0:
+            return None
+        
+        aux = self.heap[1]
+        self.heap[1] = self.heap[self.size]
+        self.size -= 1
+        self.heapify(1)
+
+        return aux
+    
+    def heap_decrease_key(self, idx, llave):        
+        if llave <= self.heap[idx].key:
+            self.heap[idx].key = llave 
+
+            while idx > 1 and self.heap[self.parent(idx)].key > self.heap[idx].key:
+                self.swap(idx,self.parent(idx))
+                idx = self.parent(idx)        
+
+    def insert(self,node):
+        self.size += 1
+        if self.size >= len(self.heap):
+            self.heap.append(node)
+        else:
+            self.heap[self.size] = node
+
+        self.heap_decrease_key(self.size, node.key)  
+    
+    def get_size(self):
+        return self.size
+    
+    def print_queue(self):
+        for i in range(1, self.size + 1):
+            print(f"LLave: {self.heap[i].key}, Valor: {self.heap[i].value}")
