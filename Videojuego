@@ -291,3 +291,224 @@ class Game:
                             break
                         else:
                             print("Solo escribe si vas a entrar o dar la exploracion por hecho, no es tan dificil. intenta de nuevo.")
+                    if habitacion == "entrar" or habitacion == "1":  
+                        print("")
+                        sound_effect2_instance.play()
+                        self.print_slow("Entras a la habitacion usando la llave que encontraste con tu grupo. Todo esta oscuro y a lo lejos puedes ver algo con un pequeño brillo.\n")
+                        self.print_slow("Te acercas y cuando estas por llegar la habitacion se ilumina con antorchas, revelando un cofre al final de la habitacion.\n")
+                        print(chest)
+                        self.print_slow("Elysia: ¡Genial! No pudimos haber encontrado algo mejor\n")
+                        self.print_slow("Aria: Yo lo dije, si hubieramos ido por la izquierda primero no habriamos encontrado el la llave, y no habriamos encontrado este cofre. \n")
+                        self.print_slow("Thorne: Bueno, acepto mi derrota. Puede que mi instinto no se haya hecho tan sabio como yo con la edad.\n")
+                        self.print_slow("Garrick: Eso ya no importa. ¡Veamos que hay adentro!\n")
+                        self.print_slow("Magoth: ¡Abramoslo!\n")
+                        self.print_slow("Juntos deciden abrir el cofre esperando encontrar un gran tesoro, alguna arma o armadura legendaria.")
+                        self.print_slow("Pero en cuanto lo abren, ¡Resulta ser un cofre trampa!")
+                        sound_effect3_instance.play()
+                        self.print_slow("Este cofre los teletransporta a otra habitacion oscura...\n")
+                        self.current_location = "trampa"
+                        self.energy = "high"
+                    elif habitacion == "dar la exploracion por hecho" or habitacion == "2":
+                        self.print_slow("Magoth: " + self.player_name + " tiene razon, lo mejor seria no entrar, no sabemos lo que nos espera o si podria ser una habitacion trampa.\n")
+                        self.print_slow("Thorne: Pero si estamos tan cerca. ¿Que tal y hay un gran tesoro tras esa vieja puerta?\n")
+                        self.print_slow("Aria: Habra algo viejo como tu. Mejor vamonos, yo ya esoy cansada.\n")
+                        self.print_slow("Garrick: Yo igual, no quiero tener que estarlos cuidando por mas tiempo hoy.\n")
+                        self.print_slow("Elysia: Por mas que quiera entrar es una desicion grupal. Larguemonos de aqui.\n")
+                        sound_effect3_instance.play()
+                        self.print_slow("El gremio decide dejar hasta aqui la exploracion el dia de hoy, entran al teletransportador y se dirigen a la Taberna.\n")
+                        self.current_location = "Taberna"
+                        self.currency = "medium"
+                elif route == "izquierda" or route == "2":
+                    self.print_slow("Thorne: ¿Lo ven? El nuevo sabe que mientras mas viejo mas sabio.\n")
+                    self.print_slow("Elysia: Se ve que no tiene buen gusto.\n")
+                    self.print_slow("Aria: Concuerco con Elysia.\n")
+                    self.print_slow("Garrick: Ya somos 2...\n")
+                    self.print_slow("Magoth: Menos platica y mas accion, iremos por la izquierda.\n")
+                    sound_effect1_instance.play()
+                    self.print_slow("Pasas por el pasillo de la izquierda y en cuanto pasan todos, cae una rejilla de metal, que no los deja volver...\n")
+                    self.print_slow("Aria: tenias razon Thorne, que graaaaan idea fue venir por este pasillo.\n")
+                    self.print_slow("Thorne: Esto solo significa que tendremos que completar la mazmorra, por lo cual conseguiremos el tesoro final.\n")
+                    self.print_slow("Garrick: Si es que llegamos a el antes de que nos maten...\n")
+                    self.print_slow("Elysia: Ya no hay vuelta atras, continuemos por el camino que dijo el vejestorio.\n")
+
+                    self.print_slow("Continuas tu camino por el lado izquierdo, encuentras unos pocos abismales y los derrotan facilmente.\n")
+                    self.print_slow("Al final del pasillo encuentras una habitacion. Tiene una puerta de madera con un cerrojo y se ve que no se ha abierto por al menos unos siglos.\n")
+                    self.print_slow("Mientras que al lado derecho esta el teletransportador de regreso a la entrada de la mazmorra.\n")
+                    while True:
+                        print("¿Entraras a la habitacion o saldras de la mazmorra?")
+                        print("1. Entrar.")
+                        print("2. Dar la exploracion por hecho.")
+                        habitacion= input(">> ").lower()
+                        if  habitacion in ["1", "2", "entrar", "dar la exploracion por hecho"]:
+                            break
+                        else:
+                            print("Solo escribe si vas a entrar o dar la exploracion por hecho, no es tan dificil. intenta de nuevo.")
+                    if habitacion == "entrar" or habitacion == "1":
+                        self.print_slow("Magoth: parece que necesitamos algun tipo de llave para entrar\n")
+                        self.print_slow("Aria: Pues creo que si hubieramos ido por el lado derecho primero, podria ser que encontraramos una llave.\n")
+                        self.print_slow("Thorne: Di lo que quieras, pero conseguimos un buen botin de camino para aca.\n")
+                        self.print_slow("Elysia: Pues creo que hasta aqui llegamos. Regresemos a la superficie.\n")
+                        self.print_slow("Magoth: Pues es lo unico que nos queda por hacer.\n")
+                        self.print_slow("Entras con tus compañeros al teletransportador y regresan a la entrada de la mazmorra.")
+                        self.print_slow("Al alejarse pueden ver como la entrada a la mazmorra se derrumba y no hay forma de volver a entrar.\n")
+                        self.print_slow("Elysia: Creo que nunca sabremos que habia en esa habitacion.\n")                    
+                        self.print_slow("Garrick: Eso es bueno. Recuerda que pudo haber sido una habitacion trampa.\n")
+                        self.print_slow("Magoth: Siendo de dia y con nuestra fuerza la habroamos superado y conseguido la recompensa.\n")
+                        self.print_slow("Aria: Pero ya nunca sabremos que habia sido de nosotros si hubieramos entrado.\n")
+                        self.print_slow("El gremio decide dejar hasta aqui la exploracion el dia de hoy, entran al teletransportador y se dirigen a la Taberna.\n")
+                        self.current_location = "Taberna"
+                        self.currency = "low"
+                    elif habitacion == "dar la exploracion por hecho" or habitacion == "2":
+                        self.print_slow("Magoth: " + self.player_name + " tiene razon, lo mejor seria no entrar, no sabemos lo que nos espera o si podria ser una habitacion trampa.\n")
+                        self.print_slow("Thorne: Pero si estamos tan cerca. ¿Que tal y hay un gran tesoro tras esa vieja puerta?\n")
+                        self.print_slow("Aria: Habra algo viejo como tu. Mejor vamonos, yo ya esoy cansada.\n")
+                        self.print_slow("Garrick: Yo igual, no quiero tener que estarlos cuidando por mas tiempo hoy.\n")
+                        self.print_slow("Elysia: Por mas que quiera entrar es una desicion grupal. Larguemonos de aqui.\n")
+                        sound_effect3_instance.play()
+                        self.print_slow("El gremio decide dejar hasta aqui la exploracion el dia de hoy, entran al teletransportador y se dirigen a la Taberna.\n")
+                        self.current_location = "Taberna"
+                        self.currency = "low"
+            elif self.current_location == "noche":
+                self.print_slow("Llegas a la entrada de la masmorra con tu gremio, tienes que prepararte, espero hayas disfrutado tu dia por que puede que haya sido la ultima vez que veas la luz del sol, por que no la veras por las proximas horas."
+                                " O puede que nunca mas...\n")
+                self.print_slow("Magoth: Bien, aqui estamos. Nuestra primera exploracion como gremio.\n")
+                self.print_slow("Elysia: Ya exrtañaba esto.\n")
+                self.print_slow("Thorne: Hora de explorar.\n")
+                self.print_slow("Aria: Esperemos no nos maten por venir a estas horas.\n")
+
+                self.print_slow("Entras a la mazmorra con tu gremio. Todo esta oscuro, no puedes ver mas de 2 metros delante de ti, excepto por unas pocas antorchas para iluminar.\n")
+                self.print_slow("Magoth: Muy bien equipo recuerden." + self.player_name +" y yo iremos delante, Aria y Elysia estaran detras como apoyo a larga distancia y Garrick y Thorne cuidaran de nosotros.\n")
+                self.print_slow("Todos: Entendido.\n")
+                self.print_slow("Continuan explorando la mazmorra, todo tranquilo, por ahora, cualquier cosa podria salir de la oscuridad. Siguen un solo camino,combaten contra Abismales fuertes, pero tu grupo es lo suficientemente fuerte para no batallar comtra ellos.")
+                self.print_slow("Al pelear contra cientos de Abismales en tu camino, finalmente encuentran un lugar para descansar.")
+                self.print_slow("El unico problema es que ahora el camino se separa en 2, ¿a donde llevaras a tu gremio?. Recuerda que una mala decision puede causar tu muerte o la de alguno de tus compañeros...\n")
+                self.print_slow("Magoth: Entonces... ¿Derecha o izquierda?\n")
+                self.print_slow("Aria: Siempre es mejor ir por la derecha, lo digo por experiencia.\n")
+                self.print_slow("Thorne: En TU experiencia, mi instinto nunca me falla y dice que vayamos por la izquierda\n")
+                self.print_slow("Aria: Pues yo no confio en tu instinto oxidado anciano, mejor dejemos que el novato elija.")
+                self.print_slow("      ¿Iremos por la derecha o la izquierda?")
+                while True:
+                    print("1. Derecha")
+                    print("2. Izquierda")
+                    route= input(">> ").lower()
+                    if  route in ["1", "2", "derecha", "izquierda"]:
+                        break
+                    else:
+                        print("Esa opcion no esta en la lista... Si tu vida dependiera de esta decision estarias muerto. Intentalo de nuevo.")
+                if route == "derecha" or route == "1":
+                    self.print_slow("Magoth: Entonces por la derecha sera.\n")
+                    self.print_slow("Aria: Buena eleccion novato, se ve que vas por buen camino\n")
+                    self.print_slow("Elysia: Con que consigamos tesoros o tengamos buenas batallas no veo problema.\n")
+                    self.print_slow("Thorne: Bien, eligan el camino que quieran.\n")
+                    self.print_slow("Continuas tu camino por el lado derecho, encuentras aun mas abismales fuertes, tu equipo con su fuerza los derrota a todos.")
+                    self.print_slow("Al final del pasillo se encuentran con el jefe Abismal. Despues de una ardua batalla tu gremio logra salir victorioso.")
+                    self.print_slow("Despues de derrotarlo se dan cuenta que el jefe Abismal dejo caer una llave...\n")
+                    print(key)
+                    self.print_slow("Elysia: Una llave eh, ¿Que creen que abrira?\n")
+                    self.print_slow("Thorne: Probablemente una puerta...\n")
+                    self.print_slow("Aria: ¡Puede que un cofre!\n")
+                    self.print_slow("Garrick: Pues creo que tenemos que seguir explorando para averiguarlo.\n")
+                    self.print_slow("Magoth: Garrick tiene razon, creo que es momento de ir por el camino izquierdo\n")
+                    self.print_slow("Aria: ¿Lo ves novato? Te dije que el camino de la derecha era bueno.\n")
+                    self.afinidad_Aria += 2
+                    self.key = "key"
+                    self.print_slow("El grupo y tu regresan por su camino y ahora se dirigen al camino de la izquierda.\n")
+                    sound_effect1_instance.play()
+                    self.print_slow("Pasas por el pasillo de la izquierda y en cuanto pasan todos, cae una rejilla de metal, que no los deja volver...\n")
+                    self.print_slow("Aria: ¿Que les dije? Si hubieramos ido por el camino de la izquierda primero no habriamos podido ir por la derecha y encontrar la llave.\n")
+                    self.print_slow("Continuas tu camino por el lado izquierdo, encuentras unos pocos abismales y los derrotan, pero terminan muy cansados.")
+                    self.print_slow("Al final del pasillo encuentras una habitacion. Tiene una puerta de madera con un cerrojo y se ve que no se ha abierto por al menos unos siglos.\n")
+                    print(puerta)
+                    self.print_slow("Mientras que al lado derecho esta el teletransportador de regreso a la entrada de la mazmorra.\n")
+                    print(tp)
+                    while True:
+                        print("¿Entraras a la habitacion o saldras de la mazmorra?")
+                        print("1. Entrar.")
+                        print("2. Dar la exploracion por hecho.")
+                        habitacion= input(">> ").lower()
+                        if  habitacion in ["1", "2", "entrar", "dar la exploracion por hecho"]:
+                            break
+                        else:
+                            print("Solo escribe si vas a entrar o dar la exploracion por hecho, no es tan dificil. intenta de nuevo.")
+                    if habitacion == "entrar" or habitacion == "1":  
+                        print("")
+                        sound_effect2_instance.play()
+                        self.print_slow("Entras a la habitacion usando la llave que encontraste con tu grupo. Todo esta oscuro y a lo lejos puedes ver algo con un pequeño brillo.\n")
+                        self.print_slow("Te acercas y cuando estas por llegar la habitacion se ilumina con antorchas, revelando un cofre al final de la habitacion.\n")
+                        print(chest)
+                        self.print_slow("Elysia: ¡Genial! No pudimos haber encontrado algo mejor\n")
+                        self.print_slow("Aria: Yo lo dije, si hubieramos ido por la izquierda primero no habriamos encontrado el la llave, y no habriamos encontrado este cofre. \n")
+                        self.print_slow("Thorne: Bueno, acepto mi derrota. Puede que mi instinto no se haya hecho tan sabio como yo con la edad.\n")
+                        self.print_slow("Garrick: Eso ya no importa. ¡Veamos que hay adentro!\n")
+                        self.print_slow("Magoth: ¡Abramoslo!\n")
+                        self.print_slow("Juntos deciden abrir el cofre esperando encontrar un gran tesoro, alguna arma o armadura legendaria.")
+                        self.print_slow("Pero en cuanto lo abren, ¡Resulta ser un cofre trampa!")
+                        sound_effect3_instance.play()
+                        self.print_slow("Este cofre los teletransporta a otra habitacion oscura...\n")
+                        self.current_location = "trampa"
+                        self.energy = "low"
+                    elif habitacion == "dar la exploracion por hecho" or habitacion == "2":
+                        self.print_slow("Magoth: " + self.player_name + " tiene razon, lo mejor seria no entrar, no sabemos lo que nos espera o si podria ser una habitacion trampa.\n")
+                        self.print_slow("Thorne: Pero si estamos tan cerca. ¿Que tal y hay un gran tesoro tras esa vieja puerta?\n")
+                        self.print_slow("Aria: Habra algo viejo como tu. Mejor hay que irnos, yo ya estoy muy cansada.\n")
+                        self.print_slow("Garrick: Yo igual, no quiero tener que estarlos cuidando por mas tiempo hoy.\n")
+                        self.print_slow("Elysia: Por mas que quiera entrar es una desicion grupal. Larguemonos de aqui.\n")
+                        sound_effect3_instance.play()
+                        self.print_slow("El gremio decide dejar hasta aqui la exploracion el dia de hoy, entran al teletransportador y se dirigen a la Taberna.\n")
+                        self.current_location = "Taberna"
+                        self.currency = "high"
+                elif route == "izquierda" or route == "2":
+                    self.print_slow("Thorne: ¿Lo ven? El nuevo sabe que mientras mas viejo mas sabio.\n")
+                    self.print_slow("Elysia: Se ve que no tiene buen gusto.\n")
+                    self.print_slow("Aria: Concuerco con Elysia.\n")
+                    self.print_slow("Garrick: Ya somos 2...\n")
+                    self.print_slow("Magoth: Menos platica y mas accion, iremos por la izquierda.\n")
+                    sound_effect1_instance.play()
+                    self.print_slow("Pasas por el pasillo de la izquierda y en cuanto pasan todos, cae una rejilla de metal, que no los deja volver...\n")
+                    self.print_slow("Aria: tenias razon Thorne, que graaaaan idea fue venir por este pasillo.\n")
+                    self.afinidad_Aria =-2
+                    self.print_slow("Thorne: Esto solo significa que tendremos que completar la mazmorra, por lo cual conseguiremos el tesoro final.\n")
+                    self.print_slow("Garrick: Si es que llegamos a el antes de que nos maten...\n")
+                    self.print_slow("Elysia: Ya no hay vuelta atras, continuemos por el camino que dijo el vejestorio.\n")
+
+                    self.print_slow("Continuas tu camino por el lado izquierdo, encuentras unos pocos abismales y los derrotan.\n")
+                    self.print_slow("Al final del pasillo encuentras una habitacion. Tiene una puerta de madera con un cerrojo y se ve que no se ha abierto por al menos unos siglos.\n")
+                    print(puerta)
+                    self.print_slow("Mientras que al lado derecho esta el teletransportador de regreso a la entrada de la mazmorra.\n")
+                    print(tp)
+                    while True:
+                        print("¿Entraras a la habitacion o saldras de la mazmorra?")
+                        print("1. Entrar.")
+                        print("2. Dar la exploracion por hecho.")
+                        habitacion= input(">> ").lower()
+                        if  habitacion in ["1", "2", "entrar", "dar la exploracion por hecho"]:
+                            break
+                        else:
+                            print("Solo escribe si vas a entrar o dar la exploracion por hecho, no es tan dificil. intenta de nuevo.")
+                    if habitacion == "entrar" or habitacion == "1":
+                        self.print_slow("Magoth: parece que necesitamos algun tipo de llave para entrar\n")
+                        self.print_slow("Aria: Pues creo que si hubieramos ido por el lado derecho primero, podria ser que encontraramos una llave.\n")
+                        self.print_slow("Thorne: Di lo que quieras, pero conseguimos un buen botin de camino para aca.\n")
+                        self.print_slow("Elysia: Pues creo que hasta aqui llegamos. Regresemos a la superficie.\n")
+                        self.print_slow("Magoth: Pues es lo unico que nos queda por hacer.\n")
+                        self.print_slow("Entras con tus compañeros al teletransportador y regresan a la entrada de la mazmorra.")
+                        self.print_slow("Al alejarse pueden ver como la entrada a la mazmorra se derrumba y no hay forma de volver a entrar.\n")
+                        self.print_slow("Elysia: Creo que nunca sabremos que habia en esa habitacion.\n")                    
+                        self.print_slow("Garrick: Eso es bueno. Recuerda que pudo haber sido una habitacion trampa.\n")
+                        self.print_slow("Magoth: Siendo de dia y con nuestra fuerza la habroamos superado y conseguido la recompensa.\n")
+                        self.print_slow("Aria: Pero ya nunca sabremos que habia sido de nosotros si hubieramos entrado.\n")
+                        sound_effect3_instance.play()
+                        self.print_slow("El gremio decide dejar hasta aqui la exploracion el dia de hoy, entran al teletransportador y se dirigen a la Taberna.\n")
+                        self.current_location = "Taberna"
+                        self.currency = "medium"
+                    elif habitacion == "dar la exploracion por hecho" or habitacion == "2":
+                        self.print_slow("Magoth: " + self.player_name + " tiene razon, lo mejor seria no entrar, no sabemos lo que nos espera o si podria ser una habitacion trampa.\n")
+                        self.print_slow("Thorne: Pero si estamos tan cerca. ¿Que tal y hay un gran tesoro tras esa vieja puerta?\n")
+                        self.print_slow("Aria: Habra algo viejo como tu. Mejor vamonos, yo ya esoy cansada.\n")
+                        self.print_slow("Garrick: Yo igual, no quiero tener que estarlos cuidando por mas tiempo hoy.\n")
+                        self.print_slow("Elysia: Por mas que quiera entrar es una desicion grupal. Larguemonos de aqui.\n")
+                        sound_effect3_instance.play()
+                        self.print_slow("El gremio decide dejar hasta aqui la exploracion el dia de hoy, entran al teletransportador y se dirigen a la Taberna.\n")
+                        self.current_location = "Taberna"
+                        self.currency = "medium"
+            return self.current_location
