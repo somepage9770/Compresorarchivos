@@ -512,3 +512,81 @@ class Game:
                         self.current_location = "Taberna"
                         self.currency = "medium"
             return self.current_location
+
+    def trampa(self,audio_file):
+        if self.current_location == "trampa":
+            self.print_slow("Ubicacion: Desconocida...\n")
+            pygame.mixer.init()
+            pygame.mixer.music.load(audio_file)
+            pygame.mixer.music.play(-1)
+            self.print_slow("Elysia: ¿Que diablos paso?\n")
+            self.print_slow("Aria: ¡¿Donde estamos, no veo nada?!\n")
+            self.print_slow("Magoth: Tranquilos, fue un cofre trampa, nos teletransporto a un camino oculto de la mazmorra.\n")
+            self.print_slow("Garrick: Ok, ok, ¿entonces ahora que hacemos?\n")
+            self.print_slow("Magoth: Pues solo nos queda terminar la mazmorra para salir, es la unica opcion.\n")
+            self.print_slow("Thorne: Si no hubieramos ido por el camino de la derecha primero, no habriamos abierto este cofre...\n")
+            while True:
+                    print("¿Culparas a Aria por haber terminado aqui?")
+                    print("1. Culparla.")
+                    print("2. Defenderla.")
+                    culpa= input(">> ").lower()
+                    if  culpa in ["1", "2", "culparla", "defenderla"]:
+                        break
+                    else:
+                        print("¿Te cae bien o no te cae bien? Elige que camino tomar. Intertalo de nuevo")
+            if culpa == "culparla" or culpa == "1":
+                self.print_slow("Aria: ¡No es mi culpa! Yo no sabia que iba a pasar esto.\n")
+                self.print_slow("Thorne: Pues es tu culpa que encontraramos esa llave, asi que es tu culpa.\n")
+                self.print_slow("Elysia: Ey calmnse, no es culpa de nadie, Aria no sabia que terminariamos aqui\n")
+                self.print_slow("Magoth: Elysia tiene razon, no culpemos a nadie. Hay que concentrarnos mejor en salir de aqui.\n")
+                self.print_slow("Aria te hace una mirada de odio, crei que querias llevarte bien con tus compañeros...\n")
+                self.afinidad_Aria -= 3
+            elif culpa == "defenderla" or culpa == "2":
+                self.print_slow("Magoth: " + self.player_name + " tiene razon, no es su culpa, ella no sabia que pasaria esto y fue una decision grupal el entrar y abrir el cofre\n")
+                self.print_slow("Elysia: Estoy de acuerdo, si tanto querias no abrir un cofre que podia tener un gran tesoro lo hubieras dicho antes anciano.\n")
+                self.print_slow("Thorne: Bien, lo siento. Tienen razon no es culpa de nadie. \n")
+                self.print_slow("Aria: Esta bien, mejor salgamos de aqui.\n")
+                self.print_slow("Aria: gracias por defenderme " + self.player_name + ". Lo aprecio mucho\n")
+                self.print_slow("Parece que alguien se esta llevando bien con sus compañeros...\n")
+                self.afinidad_Aria +=3
+            
+            self.print_slow("Empiezan a caminar por el pasillo oscuro del camino oculto. Apenas tienes visibilidad, ves aun menos que en la mazmorra inicial\n")
+            self.print_slow("Magoth: ¿Seguimos todos?\n")
+            self.print_slow("Todos: Si.\n")
+            self.print_slow("Magoth: Excelente, veo un poco de luz unos metros adelante, aguanten un poco mas\n")
+            self.print_slow("Un rato despues de seguir caminando, llegan a la tenue luz que vieron antes.")
+            self.print_slow("Parece ser una habitacion con antorchas, iluminando unos simbolos sobresaliendo de una pared.\n")
+            self.print_slow("Magoth: Parece ser que tenemos que presionar alguno de estos simbolos.\n")
+            self.print_slow("Elysia: Que simbolos son?\n")
+            self.print_slow("Magoth: Un Sol y una Estrella.\n")
+            print(sun,star)
+            self.print_slow("Garrick: Tengo un mal presentimiento sobre esto...\n")
+            self.print_slow("Aria: No lo se, yo creo que lo mejor seria buscar otro camino.\n")
+            self.print_slow("Thorne: ¿Otro camino que tu elijas? No lo se...\n")
+            self.print_slow("Elysia: Basta Thorne, crei que ya habiamos resuelto esto.\n")
+            self.print_slow("El grupo empieza a dialogar que hacer, y por mas que intentas hacer que te escuchen no dejan de discutir."
+                            "Asi que decides tu mismo elegir que simbolo presionar. ")
+            while True:
+                    print("¿Que simbolo presionaras?")
+                    print("1. Sol.")
+                    print("2. Estrella")
+                    symbol= input(">> ").lower()
+                    if  symbol in ["1", "2", "sol", "estrella"]:
+                        break
+                    else:
+                        print("Solo elige cual de los 2 astros se te hace el mejor camino, ve los simbolos, y elige uno. Intentalo de nuevo.")
+            
+            if symbol == "sol" or symbol == "1":
+                self.print_slow("Vaya, parece que caiste en el viejo truco de que el simbolo mas bonito era el camino 'bueno', es una lastima...\n")
+                self.print_slow("La habitacion empieza a temblar, se abre un camino al fondo de la habitacion y el salon empieza a derrumbarse.\n")
+                self.print_slow("Aria: ¿¡" + self.player_name + " que hiciste!? \n")
+                self.print_slow("Magoth: Oh no. Presiono el simbolo de la estrella.\n")
+                self.print_slow("Thorne: ¡Bien hecho supernovato!, ¡AHORA NOS VAS A MATAR A TODOS!\n")
+                self.print_slow("Garrick: ¡No es momento de estar discutiendo, CORRAN!\n")
+                self.print_slow("Tu equipo y tu corren por el camino que se abrio mientras todo detras de ustedes se va derrumbando.")
+                self.print_slow("Por poco no logran cruzar el pasillo y llegan a la siguiente habitacion...\n")
+                self.print_slow("Aria: Fiuf. Apenas lo logramos.\n")
+                self.print_slow("Garrick: Crei que iba a ser mi fin.\n")
+                self.print_slow("Magoth: " + self.player_name + " eso fue muy peligroso, no debiste de haber presionado un simbolo sin antes decirnos\n")
+                self.print_slow("Elysia: Bueno, ya no importa. Pero ahora en donde estamos.\n")
+                self.current_location = "Nihiloth place"
