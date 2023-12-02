@@ -1194,3 +1194,92 @@ class Game:
                         break
                     else:
                         print("Se que esta ves son palabras mas exoticas. Pero vamos ¡Que buenas suenan! Elige un platillo de la lista, intentalo de nuevo.")
+                if comida == "sopa de criaturas misticas" or comida == "1":
+                    self.print_slow("Chago: Buena eleccion. Pero espero tengas el paladar para este platillo, por que puede llegar a ser un poco fuerte.\n")
+                    self.print_slow("Magoth: Vaya, no crei que fueras a tener un paladar tan exotico. Yo me llevare el Filete de Grifo.\n")
+                    self.print_slow("Chago: Excelente, en seguida regreso con sus ordenes.\n")
+                elif comida == "filete de grifo a la parrilla" or comida == "2":
+                    self.print_slow("Chago: Excelente, mi platillo favorito. Tienes buenos gustos.\n")
+                    self.print_slow("Magoth: Muy buena eleccion, es el platillo estrella de la casa. Yo me llevare el la Sopa de Criaturas Misticas.\n")
+                    self.print_slow("Chago: Excelente, en seguida regreso con sus ordenes.\n")
+            elif self.currency== "medium":
+                self.print_slow("Magoth: Pues creo que tenemos buen botin, pero tenemos un presupuesto. Adelante chicos, ¿Que van a pedir?\n")
+                self.print_slow("Thorne: Yo pedire un Pollo al Horno del Dragón.")
+                self.print_slow("Descripcion: Un suculento pollo asado con hierbas místicas y bañado en una salsa de fuego de dragón,")
+                self.print_slow("que le da un toque picante y lleno de sabor.\n")
+                self.print_slow("Elysia: Yo quiero Conejo a la Mostaza con Hierbas del Bosque.")
+                self.print_slow("Descripcion: Conejo cocido a fuego lento con una salsa de mostaza y hierbas frescas del bosque.")
+                self.print_slow("Se sirve con puré de coliflor y champiñones salteados.\n")
+                self.print_slow("Garrick: Yo un Costillar de Sierpe de Mar con Salsa de Almendras.")
+                self.print_slow("Descripción: Costillar de sierpe de mar asado y cubierto con una salsa cremosa de almendras.")
+                self.print_slow("Acompañado de arroz salvaje y espárragos grillados\n")
+                self.print_slow("Aria: Yo quiero un Risotto de Setas Mágicas por favor.")
+                self.print_slow("Descripción: Risotto cremoso elaborado con arroz de grano largo y setas mágicas recolectadas en los campos del mago local.")
+                self.print_slow("Decorado con queso élfico rallado.\n")
+                self.print_slow("Chago: ¿Y el nuevo que va a pedir? Nos queda Chuletas de Minotauro al Romero y Lomo de Quimera con Salsa de Vino Tinto.")
+                while True:
+                    print("1. Chuleta de Minotauro")
+                    print("   Descripción: Chuletas de minotauro sazonadas con romero fresco y asadas a la perfección. Se acompañan con risotto de setas y espárragos.")
+                    print("2. Lomo de Quimera")
+                    print("   Descripción: Lomo de Quimera cocido a la perfección y bañado en una deliciosa salsa de vino tinto.")
+                    print("   Acompañado de puré de coliflor y zanahorias glaseadas.")
+                    comida = input(">> ").lower()
+                    if comida in ["1", "2", "chuleta de minotauro", "lomo de quimera"]:
+                        break
+                    else:
+                        print("Se que esta ves son un poco palabras mas exoticas. Pero vamos ¡Que buenas suenan! Elige un platillo de la lista, intentalo de nuevo.")
+                
+                if comida == "lomo de quimera" or comida == "2":
+                    self.print_slow("Chago: Buena eleccion. Pero espero tengas el paladar para este platillo, por que puede llegar a ser un poco fuerte.\n")
+                    self.print_slow("Magoth: Vaya, no crei que fueras a tener un paladar tan exotico. Yo me llevare la Chuleta de Minotauro.\n")
+                    self.print_slow("Chago: Excelente, en seguida regreso con sus ordenes.\n")
+                elif comida == "Chuleta de Minotauro" or comida == "1":
+                    self.print_slow("Chago: Excelente, mi platillo favorito. Tienes buenos gustos.\n")
+                    self.print_slow("Magoth: Muy buena eleccion, de los mejores platillos de la casa. Yo me llevare el el Lomo de Quimera.\n")
+                    self.print_slow("Chago: Excelente, en seguida regreso con sus ordenes.\n")
+            elif self.currency == "low":
+                self.print_slow("Magoth: Pues creo que conseguimos no conseguimos muy buen botin hoy, asi que no se excedan.\n")
+                self.print_slow("Thorne: Yo pedire unos Tacos de Lengua de Orco.")
+                self.print_slow("Descripcion: Tacos con tiras de lengua de orco, marinadas y asadas, con guarniciones frescas.\n")
+                self.print_slow("Elysia: Yo voy a pedir un Pastel Élfico.")
+                self.print_slow("Descripcion: Chuleta de cerdo con hierbas élficas, cocida a la perfección y aromática.\n")
+                self.print_slow("Garrick: Yo quiero La Cola de Ofitauro.")
+                self.print_slow("Descripción:Cola de ofitauro cocinada en una mezcla de hierbas y especias locales, ofreciendo un sabor robusto.\n")
+                self.print_slow("Aria: Yo quiero un Puré de Bayas del Bosque Mágico por favor.")
+                self.print_slow("Descripción: Suave puré de bayas mágicas, resaltando dulzura y toques mágicos.\n")
+                self.print_slow("Chago: ¿Y el nuevo que va a pedir? Nos queda la Filete de Lobo Nocturno y Estofado de Bestia.")
+                while True:
+                    print("1. Filete de Lobo Nocturno")
+                    print("   Descripción: Jugoso filete  de lobo nocturno, asado con salsa de bayas silvestres.")
+                    print("2. Estofado de Bestia")
+                    print("   Descripción: Guiso con carne de bestia de bosque, vegetales y hierbas, bueno para paladares aventureros.")
+                    comida = input(">> ").lower()
+                    if comida in ["1", "2", "chuleta de minotauro", "lomo de quimera"]:
+                        break
+                    else:
+                        print("Vamos, no es tan dificil escribir los platillos. Elige un platillo de la lista, intentalo de nuevo.")
+                
+                if comida == "filete de lobo nocturno" or comida == "1":
+                    self.print_slow("Chago: Buena eleccion. De los mejores que hay a buenos precios.\n")
+                    self.print_slow("Magoth: Vaya, tienes buen gusto. Yo me llevare el Estofado de Bestia.\n")
+                    self.print_slow("Chago: Excelente, en seguida regreso con sus ordenes.\n")
+                elif comida == "estofado de bestia" or comida == "2":
+                    self.print_slow("Chago: Perfecto, espero te gusten los sabores fuertes.\n")
+                    self.print_slow("Magoth: No tiene mal sabor, pero como dicen, es muy fuerte. Yo me llevare el Filete de Lobo Nocturno.\n")
+                    self.print_slow("Chago: Excelente, en seguida regreso con sus ordenes.\n")
+            self.print_slow("Y entonces el Gremio del Ala Plateada disfruto la comida que consiguio con su esfuerzo en la mazmorra.")
+            self.print_slow("Tu y tus compañeros se volvieron muy cercanos y siguieron saliendo en grandes aventuras a mazmorras, calabozos y")
+            self.print_slow("completar expediciones y/o encargos del Gremio de Aventureros. Consiguiendo buenos botines y tesoros a lo largo de estos.\n")
+            print(fin)
+            
+
+game_instance = Game()
+game_instance.start(audio_file = r"C:\\Users\\luism\\OneDrive\\Documentos\\Game_proyect\\Title Theme.wav")
+game_instance.dia_2(audio_file = r"C:\Users\luism\OneDrive\Documentos\Game_proyect\Cantina Band.wav")
+game_instance.mazmorra(audio_file = r"C:\Users\luism\OneDrive\Documentos\Game_proyect\Diablo 1 - Dungeon music HD.wav",
+                        sound_effect1=r"C:\Users\luism\OneDrive\Documentos\Game_proyect\Prison Cell Door.wav",
+                        sound_effect2=r"C:\Users\luism\OneDrive\Documentos\Game_proyect\Big heavy door open and close sound effect.wav",
+                        sound_effect3= r"C:\Users\luism\OneDrive\Documentos\Game_proyect\Teleport Sound Effect.wav")
+game_instance.trampa(audio_file= r"C:\Users\luism\OneDrive\Documentos\Game_proyect\Gwyn, Lord of Cinder - Dark Souls Soundtrack.wav")
+game_instance.Nihiloth(sound_effect1= r"C:\Users\luism\OneDrive\Documentos\Game_proyect\Explosion Sound Effect .wav")
+game_instance.taberna(audio_file = r"C:\Users\luism\OneDrive\Documentos\Game_proyect\Cantina Band.wav")
