@@ -220,3 +220,74 @@ class Game:
                     self.current_location = "noche"
                     self.afinidad_Aria =- 1
         return self.current_location
+
+    def mazmorra(self,audio_file, sound_effect1, sound_effect2, sound_effect3):
+        if self.current_location == "dia" or self.current_location == "noche":
+            pygame.mixer.init()
+            pygame.mixer.music.load(audio_file)
+            pygame.mixer.music.play(-1)
+            sound_effect1_instance = pygame.mixer.Sound(sound_effect1)
+            sound_effect2_instance = pygame.mixer.Sound(sound_effect2)
+            sound_effect3_instance = pygame.mixer.Sound(sound_effect3)
+            self.print_slow("Ese mismo dia...")
+            self.print_slow("Ubicacion: Entrada de la Mazmorra\n")
+            if self.current_location == "dia":
+                self.print_slow("Llegas a la entrada de la mazmorra con tu gremio, tienes que prepararte, por que la luz del sol que vez ahora, no la veras por las proximas horas."
+                                " O puede que nunca mas...\n")
+                self.print_slow("Magoth: Bien, aqui estamos. Nuestra primera exploracion como gremio.\n")
+                self.print_slow("Elysia: Ya extrañaba esto.\n")
+                self.print_slow("Thorne: Hora de explorar.\n")
+                self.print_slow("Aria: Vamos " + self.player_name + ". No te vayas a quedar atras.\n")
+
+                self.print_slow("Entras a la mazmorra con tu gremio. Todo esta oscuro, no puedes ver mas de 5 metros delante de ti, excepto al entrar a las habitaciones que tienen antorchas para iluminar.\n")
+                self.print_slow("Magoth: Muy bien equipo recuerden." + self.player_name +" y yo iremos delante, Aria y Elysia estaran detras como apoyo a larga distancia y Garrick y Thorne cuidaran de nosotros.\n")
+                self.print_slow("Todos: Entendido.\n")
+                self.print_slow("Continuan explorando la mazmorra, todo tranquilo, siguen un solo camino, pelean contra Abismales no muy fuertes y van consiguiendo buen botin")
+                self.print_slow("De pronto, un camino se separa en 2, ¿a donde llevaras a tu gremio?. Recuerda que una mala decision puede causar tu muerte o la de alguno de tus compañeros...\n")
+                self.print_slow("Magoth: Entonces... ¿Derecha o izquierda?\n")
+                self.print_slow("Aria: Siempre es mejor ir por la derecha, lo digo por experiencia.\n")
+                self.print_slow("Thorne: En TU experiencia, mi instinto nunca me falla y dice que vayamos por la izquierda\n")
+                self.print_slow("Aria: Pues yo no confio en tu instinto oxidado anciano, mejor dejemos que el novato elija.")
+                self.print_slow("      ¿Iremos por la derecha o la izquierda?")
+                while True:
+                        print("1. Derecha")
+                        print("2. Izquierda")
+                        route= input(">> ").lower()
+                        if  route in ["1", "2", "derecha", "izquierda"]:
+                            break
+                        else:
+                            print("Esa opcion no esta en la lista... Si tu vida dependiera de esta decision estarias muerto. Intentalo de nuevo.")
+                if route == "derecha" or route == "1":
+                    self.print_slow("Magoth: Entonces por la derecha sera.\n")
+                    self.print_slow("Aria: Buena eleccion novato, se ve que vas por buen camino\n")
+                    self.print_slow("Elysia: Con que consigamos tesoros o tengamos buenas batallas no veo problema.\n")
+                    self.print_slow("Thorne: Bien, eligan el camino que quieran.\n")
+                    self.print_slow("Continuas tu camino por el lado derecho, encuentras unos pocos abismales y los derrotan facilmente.\n")
+                    self.print_slow("Al derrotar al jefe Abismal del pasillo descubres que solto una llave...\n")
+                    print(key)
+                    self.print_slow("Elysia: Una llave eh, ¿Que creen que abrira?\n")
+                    self.print_slow("Thorne: Probablemente una puerta...\n")
+                    self.print_slow("Aria: ¡Puede que un cofre!\n")
+                    self.print_slow("Garrick: Pues creo que tenemos que seguir explorando para averiguarlo.\n")
+                    self.print_slow("Magoth: Garrick tiene razon, creo que es momento de ir por el camino izquierdo\n")
+                    self.print_slow("Aria: ¿Lo ves novato? Te dije que el camino de la derecha era bueno.\n")
+                    self.afinidad_Aria += 2
+                    self.key = "key"
+                    self.print_slow("El grupo y tu regresan por su camino y ahora se dirigen al camino de la izquierda.\n")
+                    sound_effect1_instance.play()
+                    self.print_slow("Pasas por el pasillo de la izquierda y en cuanto pasan todos, cae una rejilla de metal, que no los deja volver...\n")
+                    self.print_slow("Aria: ¿Que les dije? Si hubieramos ido por el camino de la izquierda primero no habriamos podido ir por la derecha y encontrar la llave.\n")
+                    self.print_slow("Continuas tu camino por el lado izquierdo, encuentras unos pocos abismales y los derrotan facilmente.\n")
+                    self.print_slow("Al final del pasillo encuentras una habitacion. Tiene una puerta de madera con un cerrojo y se ve que no se ha abierto por al menos unos siglos.\n")
+                    print(puerta)
+                    self.print_slow("Mientras que al lado derecho esta el teletransportador de regreso a la entrada de la mazmorra.\n")
+                    print(tp)
+                    while True:
+                        print("¿Entraras a la habitacion o saldras de la mazmorra?")
+                        print("1. Entrar.")
+                        print("2. Dar la exploracion por hecho.")
+                        habitacion= input(">> ").lower()
+                        if  habitacion in ["1", "2", "entrar", "dar la exploracion por hecho"]:
+                            break
+                        else:
+                            print("Solo escribe si vas a entrar o dar la exploracion por hecho, no es tan dificil. intenta de nuevo.")
