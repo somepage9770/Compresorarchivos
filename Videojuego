@@ -29,3 +29,194 @@ class Game:
     def play_new_sound(self, new_audio_file):
         pygame.mixer.music.stop()
         self.play_sound(new_audio_file)
+
+    def start(self, audio_file):
+        pygame.mixer.init()
+        pygame.mixer.music.load(audio_file)
+        pygame.mixer.music.play(-1)
+        print(Titulo)
+        self.print_slow("¡Bienvenido a Sombras de Raftel! Soy el Narrador de esta historia que te acompañara a lo largo de tu travesia.")
+        self.print_slow("¿Cuál es tu nombre joven aventurero?")
+        name = input(">> ")
+        self.player_name = name  
+        self.print_slow("¡Excelente! Un placer conocerte, " + name + ".")
+        self.print_slow("Dejame explicarte como va a ser nuestra dinamica.")
+        self.print_slow("Voy a estar narrando la historia en la que tu vas a ser el personaje principal, ¿Suena bien no?")
+        self.print_slow("Pero a lo largo de la historia van a haber decisiones que vas a tener que tomar. Como por ejemplo:\n")
+        while True:
+            print("¿Que te gusta mas, los Dragones o los Lobos?")
+            print("1. Dragones.")
+            print("2. Lobos.")
+            self.print_slow("Tienes 2 opciones para elegir y dos formas de elegir cada una.")
+            self.print_slow("La primera es escribiendo '1' o '2' como respuesta.")
+            self.print_slow("La segunda, si quieres que sea mas interactivo puedes escribir lo que dice la opcion LETRA POR LETRA, ESPACIO POR ESPACIO\n")
+            self.print_slow("Asi que vamos, intentalo.\n")
+            anim = input(">> ").lower()
+            if anim in ["1", "2", "dragones", "lobos"]:
+                break
+            else:
+                self.print_slow("Te dije que tienes que escribir '1' o '2' o lo que diga la opcion de la forma que esta escrita ahi dependiendo de que quieras elegir.")
+                self.print_slow("Intentalo una vez mas\n")
+
+        if anim == "1" or anim == "dragones":
+            self.print_slow("Lamento informarte solo podras interactuar con dragones si es que te lo comes jaja...\n")
+        elif anim == "2" or anim == "lobos":
+            self.print_slow("Lamento decirte que la unica vez que se menciona un lobo es para ver si lo quieres comer o no jaja...\n")
+
+        self.print_slow("¿Pero ves? Vamos avanzando, ya entendiste la dinamica.\n")
+        self.print_slow("Deja te doy un poco de contexto sobre la historia que vamos a ver:\n")
+        self.print_slow("Eres el joven aventurero " + self.player_name + ". Un joven que acaba de terminar una mision que tenia y va de regreso a su pueblo natal: El Pueblo Foosha.")
+        self.print_slow("Pero cuando vas camino de regreso, cruzando una ciudad en la cual nunca habias estado, te topas con alguien...\n")
+        self.print_slow("???: Oh ¡Hola! Lo siento, no te vi.\n")
+        self.print_slow("???: Mi nombre es Magoth. Soy lider del gremio 'Ala Plateada' de Raftel, La Ciudad Central.\n")
+        self.print_slow("Magoth: Cual es tu nombre?\n")
+        while True:
+            newname = input(">> ")
+            if newname != self.player_name:
+                self.print_slow("Oye oye oye, no puedes cambiar tu nombre asi como asi. Escribe el nombre que me dijiste a mi.")                
+            elif newname == self.player_name:
+                break
+        self.print_slow("Magoth: Asi que " + self.player_name + " eh. Un placer en conocerte.")
+        self.print_slow("Magoth: Ya que sabemos nuestros nombres dejame contarte algo.\n")
+        self.print_slow("Magoth: En estos dias muchos de nuestros miembros se han salido del gremio y perdimos el derecho a ir a explorar mazmorras.\n")
+        self.print_slow("Magoth: Asi que me gustaria invitarte a que te unieras a mi gremio. ¿Que opinas?\n")
+        self.print_slow("Magoth: ¿Te gustaria unirte al gremio Ala Plateada? \n")                
+        while True:
+            print("¿Que haras?")
+            print("1. Unirse")
+            print("2. Negarse")
+            option = input(">> ").lower()
+            if option in ["1", "2", "unirse", "negarse"]:
+                break
+            else:
+                print("¿Si leiste la lista? Por que esa opcion no esta en ella... ingresa una que si este.")
+            
+        if option == "unirse" or option == "1":
+            self.print_slow("Magoth: ¡Genial! Como eres el 6to miembro, recuperaremos el derecho a explorar en mazmorras.")
+            self.print_slow("Magoth: Asegúrate de descansar bien y nos vemos mañana para presentarte a tus nuevos compañeros y discutir nuestra primera exploración.")
+            self.current_location = "2ndo dia Gremio"
+        elif option == "negarse" or option == "2":
+            self.print_slow("Magoth: Está bien, lo entiendo. Es un poco precipitado unirse a un gremio solo por que te lo piden si vienes de pasada...")
+            self.print_slow("Magoth: Pero bueno, en todo caso no olvides mi oferta. Si algun dia regresas por estos rumbos buscame.")
+            self.print_slow("Magoth: Espero nos volvamos a ver. ¡Cuidate!\n")
+            self.print_slow("Asi que continuas cruzando la ciudad, viajando por dias, acampando en el camino hasta que llegas a tu pueblo natal.")
+            self.print_slow("La gente te recibe muy feliz, ya que un padre, amigo, esposo y compañero ha regresado a su ciudad.")
+            self.print_slow("Dejas tus cosas de aventurero guardadas esperando no volver a usarlas por un buen tiempo y vives una larga y feliz vida con tu familia,")
+            self.print_slow("en tu pueblo natal.\n")
+            print(fin)
+            self.print_slow("Que aburrido eres, elegiste el camino facil y rapido y ya terminaste. Espero te hayas divertido...\n")          
+
+    def dia_2(self,audio_file):
+        if self.current_location == "2ndo dia Gremio":
+            pygame.mixer.init()
+            pygame.mixer.music.load(audio_file)
+            pygame.mixer.music.play(-1)
+            print("")
+            self.print_slow("Al día siguiente...")
+            self.print_slow("Ubicacion: Taberna\n")
+            print(tavern)
+            self.print_slow("Magoth: ¡Hey " + self.player_name + "! Bienvenido al Gremio del Ala Plateada.")
+            self.print_slow("        Nosotros seremos tus compañeros a lo largo de nuestras aventuras:")
+
+            print(Magoth)
+            self.print_slow("       Magoth, el Líder de Ala Plateada:")
+            self.print_slow("       Historia: Un antiguo paladín con un sentido inquebrantable del deber.")
+            self.print_slow("       Grandes habilidades mágicas, bueno con la espada y carismático.")
+
+            print(Elysia)
+            self.print_slow("       Elysia, la Arquera Noble:")
+            self.print_slow("       Historia:  Una elfa arquera con habilidades excepcionales con el arco mágico.")
+
+            print(Garrick)
+            self.print_slow("       Garrick, el Sabio Curandero:")
+            self.print_slow("       Historia:  Poderoso sanador que siempre estará cuidando tu espalda.")
+
+            print(Aria)
+            self.print_slow("       Aria, la Hechicera Curiosa:")
+            self.print_slow("       Historia: Una increíble hechicera y con mucha sabiduría para su joven edad, pero con una curiosidad peligrosa.")
+
+            print(Thorne)
+            self.print_slow("       Thorne, el Ingeniero Prodigio:")
+            self.print_slow("       Historia: Un enano experto en artefactos, trampas que cuidará de tu equipo.")
+
+            self.print_slow("Todos: ¡Bienvenido!")
+            while True:
+                print("¿Saludaras a tus compañeros?")
+                print("1. Si")
+                print("2. No")
+                saludar = input(">> ").lower()
+                if saludar in ["1", "2", "si", "no"]:
+                    break
+                else:
+                    print("Esa opcion no esta en la lista... ingresa una que si este.")
+
+
+            if saludar == "si" or saludar == "1":
+                self.print_slow("Elysia: Vaya, parece que tenemos a un nuevo miembro con actitud.\n")
+                self.print_slow("Thorne: Justo lo que esperaba.\n")
+                self.print_slow("Aria y Garrick permanecen en silencio...\n")
+                self.print_slow("Magoth: Genial, ya que se conocen mutuamente porque no nos vamos preparando para explorar?\n")
+                self.print_slow("Aria: Estoy de Acuerdo.\n")
+                self.print_slow("Magoth: Excelente, entonces, lo primero que tenemos que decidir es si tomaremos el turno de dia o de noche.\n")
+                self.print_slow("Aria: Ya habiamos hablado de esto, en la noche los Abismales son mas fuertes\n")
+                self.print_slow("Garrick: Pero las recompensas son mucho mejores que de dia\n")
+                self.print_slow("Magoth: Entonces la decision recae en " + self.player_name + ". ¿Y bien, cual sera tu decision?")
+                self.afinidad_Aria += 1
+                while True:
+                    print("1. Dia")
+                    print("2. Noche")
+                    turno= input(">> ").lower()
+                    if  turno in ["1", "2", "dia", "noche"]:
+                        break
+                    else:
+                        print("Esa opcion no esta en la lista... ingresa una que si este.")
+
+                if turno == "dia" or turno == "1":
+                    self.print_slow("Thorne: Aburrido, pero va por lo seguro\n")
+                    self.print_slow("Aria: Lo bueno es que no piensa en matarnos como otros\n")
+                    self.print_slow("Magoth: Ya ya, tranquilos. La desicion fue tomada, preparen sus cosas por que nos vamos.\n")
+                    self.print_slow("Garrick: Entendido. Buena eleccion nuevo, no queremos perderte en el primer dia.\n")
+                    self.afinidad_Aria += 2
+                    self.current_location = "dia"
+                elif turno == "noche" or turno == "2":
+                    self.print_slow("Thorne: Buena eleccion nuevo.\n")
+                    self.print_slow("Aria: Ahi va otro valiente en busca de grandes botines...\n")
+                    self.print_slow("Garrick: suspiro Significa que tendre que esforzarme esta noche...\n")
+                    self.print_slow("Magoth: Perfecto, entonces nos vemos esta noche. Guarden energias por que las necesitaremos mas tarde.\n")
+                    self.current_location = "noche"
+                    self.afinidad_Aria =-1
+
+            elif saludar == "no" or saludar == "2":
+                self.print_slow("Thorne: Vaya, parece que tenemos a otro miembro sin lengua, como estos dos.\n")
+                self.print_slow("Garrick: El silencio es mejor que estarte escuchando todo el dia.\n")
+                self.print_slow("Aria: No les hagas caso, un gusto en conocerte.\n")
+                self.afinidad_Aria =+ 2
+                self.print_slow("Magoth: Genial, ya que se conocen mutuamente porque no nos vamos preparando para explorar?\n")
+                self.print_slow("Aria: Estoy de Acuerdo.\n")
+                self.print_slow("Magoth: Excelente, entonces, lo primero que tenemos que decidir es si tomaremos el turno de dia o de noche.\n")
+                self.print_slow("Aria: Ya habiamos hablado de esto, en la noche los Abismales son mas fuertes\n")
+                self.print_slow("Garrick: Pero las recompensas son mucho mejores que de dia\n")
+                self.print_slow("Magoth: Entonces la decision recae en " + self.player_name + ". ¿Y bien, cual sera tu decision?")
+                while True:
+                    print("1. Dia")
+                    print("2. Noche")
+                    turno= input(">> ").lower()
+                    if  turno in ["1", "2", "dia", "noche"]:
+                        break
+                    else:
+                        print("Esa opcion no esta en la lista... ingresa una que si este.")
+                if turno == "dia" or turno == "1":
+                    self.print_slow("Thorne: Aburrido, pero va por lo seguro\n")
+                    self.print_slow("Aria: Lo bueno es que no piensa en matarnos como otros\n")
+                    self.print_slow("Magoth: Ya ya, tranquilos. La decision fue tomada, preparen sus cosas por que nos vamos.\n")
+                    self.print_slow("Garrick: Entendido. Buena eleccion nuevo, no queremos perderte en el primer dia.\n")
+                    self.afinidad_Aria += 2
+                    self.current_location = "dia"
+                elif turno == "noche" or turno == "2":
+                    self.print_slow("Thorne: Buena eleccion nuevo.\n")
+                    self.print_slow("Aria: Ahi va otro valiente en busca de grandes botines...\n")
+                    self.print_slow("Garrick: suspiro Significa que tendre que esforzarme esta noche...\n")
+                    self.print_slow("Magoth: Perfecto, entonces nos vemos esta noche. Guarden energias por que las necesitaremos mas tarde.\n")
+                    self.current_location = "noche"
+                    self.afinidad_Aria =- 1
+        return self.current_location
